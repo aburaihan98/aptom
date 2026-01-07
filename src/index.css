@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #864ffd;
+  --color-secondary: #000000;
+  --color-dark: #031e2d;
+  --color-light: #767d8f;
+  --color-bg: #f6f6f6;
+  --color-bgDark: #151515;
+  --color-border: #e9e9e9;
+}
+
+@layer components {
+  .Container {
+    @apply py-6 md:py-8 lg:py-16 2xl:py-[100px] mx-4 sm:mx-6 md:mx-12 lg:mx-16 max-w-[1920px] 2xl:mx-auto;
+  }
+}
