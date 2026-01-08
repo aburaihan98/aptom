@@ -1,23 +1,23 @@
-import CaseStudyPage from "../../components/case_study/CaseStudyPage";
+import BlogsWithSidebar from "../../components/blog/BlogsWithSidebar";
 import PageBanner from "../../components/common/PageBanner";
 import Feature from "../../components/shared/Feature";
 import { Footer } from "../../components/shared/Footer";
 import NavBar from "../../components/shared/NavBar";
 import TryAptomFreeForTanDays from "../../components/shared/TryAptomFreeForTanDays";
 
-export default function CaseStudy() {
+export default function BlogWithSidebar() {
   return (
     <div>
       <NavBar />
       <PageBanner
-        title="Case Study"
+        title="Latest Insights "
         breadcrumbs={[
           { label: "Home", path: "/" },
-          { label: "Pages", path: "/pages" },
-          { label: "Case Study", path: "/case-study" },
+          { label: "Blog", path: "/blog" },
+          { label: "Blog Sidebar ", path: "/blog" },
         ]}
       />
-      <CaseStudyPage />
+      <BlogsWithSidebar />
       <Feature />
       <TryAptomFreeForTanDays />
       <Footer />

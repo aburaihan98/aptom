@@ -1,24 +1,26 @@
-import CaseStudyPage from "../../components/case_study/CaseStudyPage";
 import PageBanner from "../../components/common/PageBanner";
-import Feature from "../../components/shared/Feature";
+import OurServicesPage from "../../components/our_services/OurServicesPage";
 import { Footer } from "../../components/shared/Footer";
+import LiveDemo from "../../components/shared/LiveDemo";
 import NavBar from "../../components/shared/NavBar";
+import Testimonial from "../../components/shared/Testimonial";
 import TryAptomFreeForTanDays from "../../components/shared/TryAptomFreeForTanDays";
 
-export default function CaseStudy() {
+export default function OurServices() {
   return (
     <div>
       <NavBar />
       <PageBanner
-        title="Case Study"
+        title="Our Services"
         breadcrumbs={[
           { label: "Home", path: "/" },
           { label: "Pages", path: "/pages" },
-          { label: "Case Study", path: "/case-study" },
+          { label: "Services", path: "/our-services" },
         ]}
       />
-      <CaseStudyPage />
-      <Feature />
+      <OurServicesPage />
+      <LiveDemo />
+      <Testimonial />
       <TryAptomFreeForTanDays />
       <Footer />
     </div>

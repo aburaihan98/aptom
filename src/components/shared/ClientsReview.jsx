@@ -1,5 +1,5 @@
 import SectionHeader from "../common/SectionHeader";
-import ClientsReviewCard from "./ClientsReviewCard";
+import ClientsReviewCard from "./card/ClientsReviewCard";
 import Avatar from "../../assets/saas/full-control/avatar.webp";
 import Quote from "../../assets/saas/icon/quote.webp";
 import { useState } from "react";
@@ -91,7 +91,8 @@ export default function ClientsReview() {
                   }`}
                 />
               ))}{" "}
-              <span className="text-white text-2xl mb-3">4.5</span> <span className="text-white">/5.0</span>
+              <span className="text-white text-2xl mb-3">4.5</span>{" "}
+              <span className="text-white">/5.0</span>
             </div>
           </div>
         </div>

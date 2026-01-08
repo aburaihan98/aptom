@@ -3,7 +3,7 @@ import Featured from "../../components/app/Featured";
 import { Features } from "../../components/app/Features";
 import InstantTransaction from "../../components/shared/InstantTransaction";
 import NavBar from "../../components/shared/NavBar";
-import SimplePricing from "../../components/app/SimplePricing";
+import SimplePricing from "../../components/shared/SimplePricing";
 import SoftwareIntegrations from "../../components/app/SoftwareIntegrations";
 import LiveDemo from "../../components/shared/LiveDemo";
 import L1 from "../../assets/app/live-demo/l2.webp";

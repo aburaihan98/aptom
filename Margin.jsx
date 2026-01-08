@@ -22,7 +22,6 @@ mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9
 // mb 30px
 mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-[30px]
 
-
 // mb 24px 
 mb-4 md:mb-5 lg:mb-6 2xl:mb-[24px]
 

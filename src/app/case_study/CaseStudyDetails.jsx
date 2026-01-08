@@ -1,11 +1,9 @@
-import CaseStudyPage from "../../components/case_study/CaseStudyPage";
 import PageBanner from "../../components/common/PageBanner";
-import Feature from "../../components/shared/Feature";
 import { Footer } from "../../components/shared/Footer";
 import NavBar from "../../components/shared/NavBar";
 import TryAptomFreeForTanDays from "../../components/shared/TryAptomFreeForTanDays";
 
-export default function CaseStudy() {
+export default function CaseStudyDetails() {
   return (
     <div>
       <NavBar />
@@ -14,11 +12,12 @@ export default function CaseStudy() {
         breadcrumbs={[
           { label: "Home", path: "/" },
           { label: "Pages", path: "/pages" },
-          { label: "Case Study", path: "/case-study" },
+          {
+            label: "Case Study Details",
+            path: "/case-study/case-study-details",
+          },
         ]}
       />
-      <CaseStudyPage />
-      <Feature />
       <TryAptomFreeForTanDays />
       <Footer />
     </div>

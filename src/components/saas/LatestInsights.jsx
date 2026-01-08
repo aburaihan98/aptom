@@ -1,14 +1,14 @@
 import TopSectionHeader from "../common/TopSectionHeader";
-import B1 from "../../assets/saas/LatestInsights/blog1.jpg";
-import B2 from "../../assets/saas/LatestInsights/blog2.jpg";
-import Avatar from "../../assets/saas/LatestInsights/avatar.png";
+import B4 from "../../assets/shared/latest-insights/blog4.jpg";
+import B2 from "../../assets/shared/latest-insights/blog2.jpg";
+import Avatar from "../../assets/shared/latest-insights/avatar.png";
 import LatestInsightsCard from "../shared/LatestInsightsCard";
 
 const latestInsightsData = [
   {
     title: "5 Proven Ways SaaS Tools Help You Close Deals Faster",
     category: "Computer",
-    image: B1,
+    image: B4,
     author: {
       name: "Admin",
       avatar: Avatar,

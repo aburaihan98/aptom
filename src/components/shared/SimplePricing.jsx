@@ -1,5 +1,5 @@
 import SectionHeader from "../common/SectionHeader";
-import SimplePricingCard from "./SimplePricingCard";
+import SimplePricingCard from "../app/SimplePricingCard";
 
 const pricingPlans = [
   {
