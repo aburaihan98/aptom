@@ -6,7 +6,7 @@ export default function Button({
 }) {
   return (
     <button
-      className="rounded-full px-5 py-2 md:px-6 md:py-3 lg:px-[30px] lg:py-5 font-bold"
+      className="rounded-full px-5 py-2 md:px-6 md:py-3 lg:px-[30px] lg:py-5 font-bold cursor-pointer"
       style={{
         backgroundColor: bg,
         color: textColor,

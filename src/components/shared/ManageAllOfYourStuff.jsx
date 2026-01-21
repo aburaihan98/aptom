@@ -10,31 +10,26 @@ const items = [
     id: 1,
     title: "Security",
     icon: <Shield size={40} />,
-    color: "from-slate-700 to-slate-800",
   },
   {
     id: 2,
     title: "Face ID",
     icon: <Lock size={40} />,
-    color: "from-purple-500 to-purple-600",
   },
   {
     id: 3,
     title: "Cloud Storage",
     icon: <Cloud size={40} />,
-    color: "from-slate-700 to-slate-800",
   },
   {
     id: 4,
     title: "Task Management",
     icon: <CheckCircle size={40} />,
-    color: "from-slate-700 to-slate-800",
   },
   {
     id: 5,
     title: "Trusted & Reliable",
     icon: <Zap size={40} />,
-    color: "from-slate-700 to-slate-800",
   },
 ];
 
@@ -42,24 +37,24 @@ export default function ManageAllOfYourStuff() {
   const containerRef = useRef(null);
   const [displayItems, setDisplayItems] = useState(items);
 
+  const ITEM_HEIGHT = 89;
+
   useEffect(() => {
     const carouselLoop = () => {
       if (containerRef.current) {
         gsap.to(containerRef.current, {
-          y: -100,
-          duration: 1,
+          y: -ITEM_HEIGHT,
+          duration: 0.8,
           ease: "power2.inOut",
           onComplete: () => {
-            // Rotate items array - move first item to end
             setDisplayItems((prev) => [...prev.slice(1), prev[0]]);
-            // Reset position
             gsap.set(containerRef.current, { y: 0 });
           },
         });
       }
     };
 
-    const interval = setInterval(carouselLoop, 4000); // Rotate every 4 seconds
+    const interval = setInterval(carouselLoop, 3000); // Rotate every 4 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -101,32 +96,38 @@ export default function ManageAllOfYourStuff() {
         <div className="flex items-center justify-center">
           <div className="space-y-6">
             {/* Carousel Container */}
-            <div className="relative h-96 overflow-hidden rounded-xl">
-              {/* Gradient Overlays */}
-              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-gray-900 to-transparent z-10 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent z-10 pointer-events-none" />
-
+            <div className="relative h-[360px] overflow-hidden rounded-[10px]">
               {/* Items */}
-              <div ref={containerRef} className="flex flex-col gap-4 p-4">
-                {displayItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className={`flex-shrink-0 h-24 rounded-lg bg-gradient-to-br ${
-                      item.color
-                    } flex flex-col items-center justify-center text-white transition-all duration-300 ${
-                      displayItems[0].id === item.id
-                        ? "scale-105 ring-2 ring-purple-400"
-                        : "opacity-70"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      {item.icon}
-                      <span className="text-lg font-semibold">
-                        {item.title}
-                      </span>
+              <div ref={containerRef} className="flex flex-col gap-[9px]">
+                {displayItems.map((item, index) => {
+                  const isTop = index === 0; // 50% visible at top
+                  const isActive = index === 1; // Active/focused (100% with icon)
+                  const isMiddle = index === 2 || index === 3; // 100% visible, no icon
+                  const isBottom = index === 4; // 50% visible at bottom
+
+                  return (
+                    <div
+                      key={item.id}
+                      className={`
+                        flex-shrink-0 px-10 py-5 rounded-[10px]
+                        flex items-center justify-center
+                        text-white transition-colors duration-500 ease-in-out
+                        ${isActive ? " bg-[#864FFD]" : " bg-[#031E2D]"}
+                        ${isTop ? "opacity-50 -mt-[40px]" : ""}
+                        ${isBottom ? "opacity-50 -mb-[40px]" : ""}
+                        ${isMiddle ? "opacity-100" : ""}
+                      `}
+                    >
+                      <div className="flex flex-col items-center gap-3">
+                        {/* icon only for active item */}
+                        {isActive && item.icon}
+                        <span className="text-lg font-semibold">
+                          {item.title}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

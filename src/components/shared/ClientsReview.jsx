@@ -80,7 +80,7 @@ export default function ClientsReview() {
           </div>
           <div className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
             {/* Star Rating */}
-            <div className="flex gap-1 mt-4 md:mt-6 lg:mt-8 2xl:mt-10">
+            <div className="flex items-end gap-1 mt-4 md:mt-6 lg:mt-8 2xl:mt-10">
               {[1, 2, 3, 4, 5].map((star) => (
                 <StarIcon
                   key={star}
@@ -91,8 +91,8 @@ export default function ClientsReview() {
                   }`}
                 />
               ))}{" "}
-              <span className="text-white text-2xl mb-3">4.5</span>{" "}
-              <span className="text-white">/5.0</span>
+              <span className="text-white text-2xl -mb-1">4.5</span>{" "}
+              <span className="text-white -mb-1">/5.0</span>
             </div>
           </div>
         </div>

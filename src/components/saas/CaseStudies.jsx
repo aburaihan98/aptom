@@ -9,6 +9,11 @@ import CS5 from "../../assets/saas/case-study/case_study5.jpg";
 import CS6 from "../../assets/saas/case-study/case_study6.jpg";
 import CS7 from "../../assets/saas/case-study/case_study7.jpg";
 import CaseStudiesCard from "./CaseStudiesCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef, useState } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const caseStudies = [
   {
@@ -56,10 +61,33 @@ const caseStudies = [
 ];
 
 export default function CaseStudies() {
+  const sectionRef = useRef(null);
+  const leftSideRef = useRef(null);
+  const [isPinned, setIsPinned] = useState(false);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        pin: leftSideRef.current,
+        pinSpacing: false,
+
+        onEnter: () => setIsPinned(true),
+        onLeave: () => setIsPinned(false),
+        onEnterBack: () => setIsPinned(true),
+        onLeaveBack: () => setIsPinned(false),
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="bg-bg">
+    <div ref={sectionRef} className="bg-bg">
       <div className="Container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
-        <div>
+        <div ref={leftSideRef}>
           <div className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
             <SectionHeader
               title={

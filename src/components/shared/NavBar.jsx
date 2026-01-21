@@ -34,7 +34,7 @@ const navItem = [
     ],
   },
   { name: "Blog", path: "/blog" },
-  { name: "Contact", path: "/contact-us" },
+  { name: "Contact", path: "/contact" },
 ];
 
 export default function NavBar({ bgColor = "white" }) {

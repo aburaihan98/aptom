@@ -2,6 +2,11 @@ import F1 from "../../assets/app/featured/f1.webp";
 import F2 from "../../assets/app/featured/f2.webp";
 import F3 from "../../assets/app/featured/f3.webp";
 import SectionHeader from "../common/SectionHeader";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const featuredItems = [
   {
@@ -28,17 +33,56 @@ const featuredItems = [
 ];
 
 export default function Featured() {
+  const wrapperRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    const stackOffset = 40;
+
+    gsap.set(cards, {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+    });
+
+    ScrollTrigger.create({
+      trigger: wrapperRef.current,
+      start: "top top",
+      end: `+=${cards.length * 100}%`,
+      pin: true,
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress * (cards.length - 1);
+
+        cards.forEach((card, i) => {
+          const offset = Math.max(0, progress - i);
+
+          gsap.to(card, {
+            y: -offset * stackOffset,
+            zIndex: i + 1,
+            duration: 0.2,
+            ease: "power2.out",
+          });
+        });
+      },
+    });
+  }, []);
+
   return (
-    <div className="bg-bg">
-      <div className="Container">
+    <section className="relative h-[100vh] bg-bg overflow-hidden">
+      <div ref={wrapperRef} className="relative h-full Container">
         {featuredItems.map((item, index) => (
           <div
             key={index}
-            className=" flex items-center justify-center gap-4 md:gap-6 lg:gap-8 mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-[100px]"
+            ref={(el) => (cardsRef.current[index] = el)}
+            className="bg-white rounded-[24px] shadow-xl p-8 flex gap-8"
           >
-            <div className=" flex-1 bg-gradient-to-b from-[#864FFD] to-[#E7DBFF] flex justify-center items-center p-4 md:p-6 lg:p-8 rounded-[20px] ">
-              <img src={item.image} alt={`Featured ${index + 1}`} />
+            <div className="flex-1 bg-gradient-to-b from-[#864FFD] to-[#E7DBFF] rounded-xl p-6 flex justify-center">
+              <img src={item.image} alt="" />
             </div>
+
             <div className="flex-1">
               <SectionHeader
                 title={item.title}
@@ -49,6 +93,6 @@ export default function Featured() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

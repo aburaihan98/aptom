@@ -1,4 +1,5 @@
 import PageBanner from "../../components/common/PageBanner";
+import RegisterForm from "../../components/register/RegisterForm";
 import { Footer } from "../../components/shared/Footer";
 import NavBar from "../../components/shared/NavBar";
 
@@ -14,6 +15,7 @@ export default function Register() {
           { label: "Sign Up", path: "/register" },
         ]}
       />
+      <RegisterForm />
       <Footer />
     </div>
   );

@@ -7,8 +7,8 @@ const navItem = [
     name: "Home",
     path: "/",
     submenu: [
-      { name: "Saas", path: "/" },
-      { name: "App", path: "/app" },
+      { name: "SaaS Landing", path: "/" },
+      { name: "App Landing", path: "/app" },
     ],
   },
   {
@@ -27,16 +27,20 @@ const navItem = [
       { name: "Our Services Details", path: "/our-services/service-details" },
       { name: "Review", path: "/review" },
       { name: "FAQ", path: "/faq" },
-      { name: "Blog", path: "/blog" },
-      { name: "Blog with sidebar", path: "/blog-with-sidebar" },
       { name: "Blog Details", path: "/blog-details" },
       { name: "Contact", path: "/contact" },
       { name: "Login", path: "/login" },
       { name: "Register", path: "/register" },
     ],
   },
-  { name: "Blog", path: "/blog" },
-  { name: "Contact", path: "/contact-us" },
+  {
+    name: "Blog",
+    submenu: [
+      { name: "Blog Standard ", path: "/blog" },
+      { name: "Blog with sidebar", path: "/blog-with-sidebar" },
+    ],
+  },
+  { name: "Contact", path: "/contact" },
 ];
 
 export default function NavBar() {
@@ -44,7 +48,7 @@ export default function NavBar() {
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
   return (
-    <nav className=" 2xl:max-w-[1920px] 2xl:mx-auto fixed top-0 left-0 right-0 z-50 bg-white mt-4 lg:mt-5 mx-4 sm:mx-6 md:mx-12 lg:mx-16 2xl:mx-[100px] rounded-full">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white mt-4 lg:mt-5 mx-4 sm:mx-6 md:mx-12 lg:mx-16 max-w-[1920px] rounded-full">
       <div className="flex justify-between items-center py-2 md:py-2.5 px-4 sm:px-6">
         <Link to="/">
           <h2 className="text-[22px] font-bold text-dark">Aptom.</h2>
@@ -81,12 +85,18 @@ export default function NavBar() {
 
                 {/* Dropdown menu */}
                 {item.submenu && (
-                  <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 z-50">
+                  <div className="space-y-4 2xl:space-y-6  absolute -left-6 top-full hidden group-hover:block bg-white shadow-lg rounded-md p-6 2xl:p-8 z-50">
                     {item.submenu.map((sub, subIndex) => (
                       <Link
                         key={subIndex}
                         to={sub.path}
-                        className="block px-4 py-2 text-dark hover:bg-gray-100 hover:text-primary transition"
+                        className={`block p-2 rounded-md whitespace-nowrap transition
+                            ${
+                              item.name === "Home"
+                                ? "bg-primary text-white"
+                                : "bg-transparent text-dark hover:bg-gray-100"
+                            }
+                          `}
                       >
                         {sub.name}
                       </Link>

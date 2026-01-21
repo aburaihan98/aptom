@@ -15,10 +15,10 @@ import BlogDetails from "../app/blog/BlogDetails";
 import Contact from "../app/contact/Contact";
 import Login from "../app/login/Login";
 import Register from "../app/register/Register";
-import ServiceDetails from "../app/our_services/ServiceDetails";
-import CaseStudyDetails from "../app/case_study/CaseStudyDetails";
 import Review from "../app/review/Review";
 import BlogPage from "../app/blog/BlogPage";
+import CaseStudyDetailsPage from "../app/case_study/CaseStudyDetailsPage";
+import ServiceDetailsPage from "../app/our_services/ServiceDetailsPage";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/case-study/case-study-details",
-        element: <CaseStudyDetails />,
+        element: <CaseStudyDetailsPage />,
       },
       {
         path: "/team",
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/our-services/service-details",
-        element: <ServiceDetails />,
+        element: <ServiceDetailsPage />,
       },
       {
         path: "/review",

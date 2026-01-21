@@ -1,3 +1,9 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function StatsBanner() {
   const stats = [
     { number: "449", label: "API Users" },
@@ -5,6 +11,27 @@ export default function StatsBanner() {
     { number: "100", label: "API Calls Made" },
     { number: "58", label: "API Calls Made" },
   ];
+
+  const numberRefs = useRef([]);
+
+  useEffect(() => {
+    numberRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { innerText: 0 },
+        {
+          innerText: stats[index].number,
+          duration: 2,
+          ease: "power1.out",
+          snap: { innerText: 1 },
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
     <section className="bg-primary">
@@ -14,9 +41,11 @@ export default function StatsBanner() {
             <div key={index} className="text-left">
               <div className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[40px] text-white mb-2 sm:mb-3 md:mb-4 lg:mb-4 xl:mb-4 2xl:mb-5 leading-[1]">
                 <span className="inline-block -ml-3 mr-1">+</span>
-                {stat.number}
+                <span ref={(el) => (numberRefs.current[index] = el)}>0</span>
               </div>
-              <p className="text-white text-sm md:text-base">{stat.label}</p>
+              <p className="text-white text-sm md:text-base ml-4">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

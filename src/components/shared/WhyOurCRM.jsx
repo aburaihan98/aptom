@@ -14,7 +14,7 @@ export default function WhyOurCRM() {
           </span>{" "}
           Convert—Beautifully.
         </p>
-        <div className="text-left">
+        <div className="text-left cursor-pointer">
           <Link text="learn more" />
         </div>
       </div>

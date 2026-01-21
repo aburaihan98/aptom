@@ -1,3 +1,4 @@
+import BlogDetailsContent from "../../components/blog/BlogDetailsContent";
 import PageBanner from "../../components/common/PageBanner";
 import NavBar from "../../components/saas/NavBar";
 import { Footer } from "../../components/shared/Footer";
@@ -16,6 +17,7 @@ export default function BlogDetails() {
           { label: "Blog Datails", path: "/blog-details" },
         ]}
       />
+      <BlogDetailsContent />
       <TryAptomFreeForTanDays />
       <Footer />
     </div>

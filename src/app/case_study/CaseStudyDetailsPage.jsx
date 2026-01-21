@@ -1,9 +1,10 @@
+import CaseStudyDetails from "../../components/case_study/CaseStudyDetails";
 import PageBanner from "../../components/common/PageBanner";
 import { Footer } from "../../components/shared/Footer";
 import NavBar from "../../components/shared/NavBar";
 import TryAptomFreeForTanDays from "../../components/shared/TryAptomFreeForTanDays";
 
-export default function CaseStudyDetails() {
+export default function CaseStudyDetailsPage() {
   return (
     <div>
       <NavBar />
@@ -18,6 +19,7 @@ export default function CaseStudyDetails() {
           },
         ]}
       />
+      <CaseStudyDetails />
       <TryAptomFreeForTanDays />
       <Footer />
     </div>

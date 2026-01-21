@@ -1,7 +1,10 @@
+import { useState } from "react";
 import VideoBanner from "../../assets/saas/full-control/video-banner.webp";
 import VideoIcon from "../../assets/saas/icon/video.webp";
 
 export default function LiveDemo({ banner }) {
+  const [openVideo, setOpenVideo] = useState(false);
+
   return (
     <div className="bg-bg">
       <div className="Container">
@@ -13,7 +16,10 @@ export default function LiveDemo({ banner }) {
             className="w-full h-auto"
           />
           {/* Icon centered */}
-          <div className="absolute inset-0 flex justify-center items-center">
+          <div
+            onClick={() => setOpenVideo(true)}
+            className="absolute inset-0 flex justify-center items-center"
+          >
             <div className="bg-white p-4 md:p-5 lg:p-[23px] rounded-full cursor-pointer">
               <img
                 src={VideoIcon}
@@ -23,6 +29,38 @@ export default function LiveDemo({ banner }) {
             </div>
           </div>
         </div>
+        {/* ================= MODAL ================= */}
+        {openVideo && (
+          <div
+            className="fixed inset-0 md:items-start lg:items-start md:pt-36 lg:pt-36  bg-black/70 flex items-center justify-center z-50"
+            onClick={() => setOpenVideo(false)}
+          >
+            <div
+              className="bg-white rounded-lg w-[90%] md:w-[80%] lg:w-[800px] p-4 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setOpenVideo(false)}
+                className="absolute -top-3 -right-3 bg-black text-white w-8 h-8 rounded-full cursor-pointer"
+              >
+                ✕
+              </button>
+
+              {/* YouTube Video */}
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full rounded-md"
+                  src="https://www.youtube.com/embed/vquNo3S5eYI"
+                  title="YouTube video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

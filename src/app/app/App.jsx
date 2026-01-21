@@ -13,6 +13,7 @@ import OurPartners from "../../components/app/OurPartners";
 import DownloadAppToday from "../../components/app/DownloadAppToday";
 import { Footer } from "../../components/shared/Footer";
 import ManageAllOfYourStuff from "../../components/shared/ManageAllOfYourStuff";
+import Divider from "../../components/saas/Divider";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <Features />
       <ManageAllOfYourStuff />
       <InstantTransaction />
+      <Divider />
       <Featured />
       <SoftwareIntegrations />
       <SimplePricing />

@@ -8,7 +8,7 @@ import P6 from "../../assets/shared/partners/p6.webp";
 export default function OurPartners() {
   return (
     <div className="bg-bg">
-      <div className="Container -mt-[90px] md:-mt-[180px] lg:-mt-[300px] 2xl:-mt-[500px]">
+      <div className="Container -mt-[90px] md:-mt-[180px] lg:-mt-[300px]">
         <div className=" flex items-center justify-between ">
           <div>
             <img src={P1} alt="Partners one" />
