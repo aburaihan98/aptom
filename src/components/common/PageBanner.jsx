@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 export default function PageBanner({ title, breadcrumbs = [] }) {
   return (
     <div className="bg-gradient-to-b from-[#E0C0FF] to-[#E7DBFF]">
-      <div className="Container flex items-end justify-between">
-        <div className="flex items-end gap-4">
+      <div className="Container flex flex-col md:flex-row md:items-end justify-between">
+        <div className="flex items-end gap-4  mb-4 ">
           <h2 className=" text-[24px] sm:text-[28px] md:text-[36px] lg:text-[48px] xl:text-[60px] 2xl:text-[70px] leading-[1]">
             {title}
           </h2>

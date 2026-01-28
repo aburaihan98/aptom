@@ -13,7 +13,7 @@ export default function SimplePricingCard({
 }) {
   return (
     <div
-      className={` relative p-6 sm:p-8 lg:p-10 group bg-white transition-all duration-500 cursor-pointer hover:bg-primary hover:text-white hover:shadow-xl ${cardBorder}`}
+      className={` relative p-6 sm:p-8 lg:p-10 group bg-white transition-all duration-500 cursor-pointer hover:bg-primary hover:text-white hover:shadow-xl rounded-[10px] ${cardBorder}`}
     >
       {isPopular && (
         <div className="absolute top-4 right-4 bg-primary text-white text-xs sm:text-sm font-medium px-3 py-[5px] rounded shadow-md">

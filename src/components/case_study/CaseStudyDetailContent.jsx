@@ -60,8 +60,8 @@ export default function CaseStudyDetailContent() {
   ];
 
   return (
-    <div className=" -mt-48 flex items-center justify-center">
-      <div className="p-[50px] space-y-10">
+    <div className="-mt-10 md:-mt-48 flex items-center justify-center">
+      <div className="p-4 md:p-[50px] space-y-10">
         {/* Challenge Section */}
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">

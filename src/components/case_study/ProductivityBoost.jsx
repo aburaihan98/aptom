@@ -12,10 +12,10 @@ export default function ProductivityBoost() {
   };
 
   return (
-    <div className="transform -translate-y-1/2 flex items-center justify-center z-50">
+    <div className="transform -translate-y-1/12 md:-translate-y-1/2 flex items-center justify-center z-50">
       <div className=" bg-white rounded-[20px]">
         {/* Content Area */}
-        <div className="p-[50px]">
+        <div className=" p-4 md:p-[50px]">
           {/* Category Badge */}
           <div className="inline-block mb-4 lg:mb-5">
             <span className="text-sm font-medium text-primary tracking-wide">

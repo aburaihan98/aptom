@@ -2,7 +2,7 @@ import Facebook from "../../assets/common/social-media/facebook.webp";
 import instagram from "../../assets/common/social-media/instagram.webp";
 import youtube from "../../assets/common/social-media/youtube.webp";
 import twitch from "../../assets/common/social-media/twitch.webp";
-import UpRightArrow from "../../assets/common/up-right-arrow.webp";
+import UpRightArrow from "../../assets/common/up-right-arrow-white2.webp";
 
 const usefulLinks = [
   { title: "About Company", link: "#" },

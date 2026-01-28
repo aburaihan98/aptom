@@ -80,7 +80,7 @@ const CaseStudyData = [
 export default function CaseStudyPage() {
   return (
     <div className="bg-bg">
-      <div className="Container grid grid-cols-2 gap-6">
+      <div className="Container grid grid-cols-1 lg:grid-cols-2 gap-6">
         {CaseStudyData?.map((study) => (
           <CaseStudyCard study={study} />
         ))}

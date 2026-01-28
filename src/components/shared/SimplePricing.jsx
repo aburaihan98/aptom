@@ -51,26 +51,28 @@ const pricingPlans = [
 export default function SimplePricing() {
   return (
     <div className="bg-bg">
-      <div className="Container">
-        <div className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
-          <SectionHeader
-            title="No Hidden Charge Applied, Choose Your Plan"
-            subtitle="Pricing Plan"
-            textAlign="center"
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-          {pricingPlans.map((plan, index) => (
-            <SimplePricingCard
-              key={index}
-              planName={plan.planName}
-              subtitle={plan.subtitle}
-              price={plan.price}
-              period={plan.period}
-              isPopular={plan.isPopular}
-              features={plan.features}
+      <div className=" max-w-6xl mx-auto">
+        <div className="py-6 md:py-8 lg:py-16 2xl:py-[100px] mx-4 sm:mx-6 md:mx-12 lg:mx-16 2xl:mx-0 max-w-[1920px]">
+          <div className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
+            <SectionHeader
+              title="No Hidden Charge Applied, Choose Your Plan"
+              subtitle="Pricing Plan"
+              textAlign="center"
             />
-          ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+            {pricingPlans.map((plan, index) => (
+              <SimplePricingCard
+                key={index}
+                planName={plan.planName}
+                subtitle={plan.subtitle}
+                price={plan.price}
+                period={plan.period}
+                isPopular={plan.isPopular}
+                features={plan.features}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ export default function ContactForm() {
               </div>
 
               {/* Form Fields */}
-              <div className="space-y-6">
+              <div className="space-y-6 px-4">
                 {/* First Name & Last Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                   <div>

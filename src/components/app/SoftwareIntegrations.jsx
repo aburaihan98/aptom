@@ -49,14 +49,16 @@ export default function SoftwareIntegrations() {
         />
       </div>
       <div className="mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-[50px]">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 2xl:grid-cols-8 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 2xl:grid-cols-8 gap-4 md:gap-6 lg:gap-8">
           {softwareLogos.map((logo, index) => (
             <div key={index} className="flex items-center justify-center">
-              <img
-                src={logo}
-                alt={`Software Logo ${index + 1}`}
-                className="w-full h-auto"
-              />
+              <div>
+                <img
+                  src={logo}
+                  alt={`Software Logo ${index + 1}`}
+                  className="w-full h-full "
+                />
+              </div>
             </div>
           ))}
         </div>

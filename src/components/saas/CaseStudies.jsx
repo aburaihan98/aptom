@@ -69,7 +69,7 @@ export default function CaseStudies() {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "top top",
+        start: "top top+=96",
         end: "bottom bottom",
         pin: leftSideRef.current,
         pinSpacing: false,
@@ -86,34 +86,38 @@ export default function CaseStudies() {
 
   return (
     <div ref={sectionRef} className="bg-bg">
-      <div className="Container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
-        <div ref={leftSideRef}>
-          <div className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
-            <SectionHeader
-              title={
-                <>
-                  Success Stories That Speak for{" "}
-                  <br className=" hidden lg:block" /> Themselves, Real Impact
-                </>
-              }
-              subtitle="Case Studies"
-              description="From Data to Decisions: Proven Outcomes, Customer Journeys Powered by Innovation, Scaling Smarter: Stories of Transformation."
-            />
+      <div
+        className={`transition-all duration-300 ${isPinned ? "pt-24" : "pt-0"}`}
+      >
+        <div className="Container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
+          <div ref={leftSideRef}>
+            <div className="mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
+              <SectionHeader
+                title={
+                  <>
+                    Success Stories That Speak for{" "}
+                    <br className=" hidden lg:block" /> Themselves, Real Impact
+                  </>
+                }
+                subtitle="Case Studies"
+                description="From Data to Decisions: Proven Outcomes, Customer Journeys Powered by Innovation, Scaling Smarter: Stories of Transformation."
+              />
+            </div>
+            <div>
+              <Button bg="#031E2D" title="View more" />
+            </div>
           </div>
-          <div>
-            <Button bg="#031E2D" title="View more" />
+          <div className="grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
+            {caseStudies.map((study, index) => (
+              <CaseStudiesCard
+                key={index}
+                title={study.title}
+                category={study.category}
+                image={study.image}
+                actionIcon={study.actionIcon}
+              />
+            ))}
           </div>
-        </div>
-        <div className="grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 2xl:gap-10">
-          {caseStudies.map((study, index) => (
-            <CaseStudiesCard
-              key={index}
-              title={study.title}
-              category={study.category}
-              image={study.image}
-              actionIcon={study.actionIcon}
-            />
-          ))}
         </div>
       </div>
     </div>

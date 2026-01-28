@@ -19,7 +19,7 @@ export default function ErrorPage() {
         {/* Button */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 bg-lime-400 text-slate-900 font-medium py-2 px-5 rounded-md hover:bg-lime-500 transition"
+          className="inline-flex items-center gap-2 bg-primary text-white font-medium py-2 px-5 rounded-md  transition"
         >
           Back to Home →
         </Link>

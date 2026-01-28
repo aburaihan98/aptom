@@ -12,7 +12,7 @@ export default function TopSectionHeader({
 }) {
   return (
     <div
-      className="flex items-center justify-between mb-4 md:mb-6 lg:mb-8 2xl:mb-10"
+      className="flex flex-col md:flex-row md:items-center lg:justify-between mb-4 md:mb-6 lg:mb-8 2xl:mb-10 cursor-pointer "
       style={{
         color: textColor,
         textAlign: textAlign,
@@ -37,7 +37,7 @@ export default function TopSectionHeader({
           {title}
         </h2>
       </div>
-      <div>
+      <div className="mt-4 lg:mt-0">
         {linkText ? (
           <Link text={linkText} />
         ) : (

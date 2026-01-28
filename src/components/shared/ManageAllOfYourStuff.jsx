@@ -74,7 +74,7 @@ export default function ManageAllOfYourStuff() {
             textColor="#E9E9E9"
           />
           <div className="flex gap-3 pb-4 sm:pb-5 md:pb-6 lg:pb-7 xl:pb-8 2xl:pb-9  mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9 border-b-[1px]  border-[#FFFFFF26]">
-            <div>
+            <div className="mt-1">
               <img src={M2} alt="Manage icon" />
             </div>
             <div className="flex flex-col gap-2 text-white">

@@ -10,7 +10,7 @@ export default function CaseStudyDetails() {
     <div className="bg-bg">
       <div className="Container">
         <div className="flex justify-center">
-          <img className=" rounded-[20px]" src={C1} alt="C1" />
+          <img className="rounded-[20px]" src={C1} alt="C1" />
         </div>
         <ProductivityBoost />
         <CaseStudyDetailContent />

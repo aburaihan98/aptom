@@ -53,16 +53,16 @@ export default function FullControlForMassiveAIWorkloads() {
             <div
               key={index}
               className={`
-                ${index % 2 === 0 ? "md:border-r border-gray-300" : ""}
+                ${index % 2 === 0 ? "md:border-r border-[#E9E9E9]" : ""}
                 ${
                   Math.floor(index / 2) % 2 === 0
-                    ? "border-b border-gray-300"
+                    ? "border-b border-[#E9E9E9]"
                     : ""
                 }
               `}
             >
               <div className="py-4 md:py-6 lg:py-7 2xl:py-[30px] flex gap-2 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-5">
-                <div>
+                <div className="mt-1 lg:mt-0">
                   <img src={item.icon} alt="icon" />
                 </div>
                 <div>

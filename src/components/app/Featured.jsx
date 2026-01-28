@@ -2,11 +2,6 @@ import F1 from "../../assets/app/featured/f1.webp";
 import F2 from "../../assets/app/featured/f2.webp";
 import F3 from "../../assets/app/featured/f3.webp";
 import SectionHeader from "../common/SectionHeader";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const featuredItems = [
   {
@@ -33,57 +28,25 @@ const featuredItems = [
 ];
 
 export default function Featured() {
-  const wrapperRef = useRef(null);
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const cards = cardsRef.current;
-    const stackOffset = 40;
-
-    gsap.set(cards, {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-    });
-
-    ScrollTrigger.create({
-      trigger: wrapperRef.current,
-      start: "top top",
-      end: `+=${cards.length * 100}%`,
-      pin: true,
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress * (cards.length - 1);
-
-        cards.forEach((card, i) => {
-          const offset = Math.max(0, progress - i);
-
-          gsap.to(card, {
-            y: -offset * stackOffset,
-            zIndex: i + 1,
-            duration: 0.2,
-            ease: "power2.out",
-          });
-        });
-      },
-    });
-  }, []);
+  const getStickyTop = (index) => {
+    const baseTop = 20;
+    const increment = 20;
+    return baseTop + index * increment;
+  };
 
   return (
-    <section className="relative h-[100vh] bg-bg overflow-hidden">
-      <div ref={wrapperRef} className="relative h-full Container">
+    <section className="relative bg-bg h-screen overflow-y-auto">
+      <div className="relative Container">
         {featuredItems.map((item, index) => (
           <div
             key={index}
-            ref={(el) => (cardsRef.current[index] = el)}
-            className="bg-white rounded-[24px] shadow-xl p-8 flex gap-8"
+            className="sticky  bg-white rounded-[20px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-5"
+            style={{ top: `${getStickyTop(index)}px` }}
           >
             <div className="flex-1 bg-gradient-to-b from-[#864FFD] to-[#E7DBFF] rounded-xl p-6 flex justify-center">
               <img src={item.image} alt="" />
             </div>
-
-            <div className="flex-1">
+            <div className="flex-1 flex items-center justify-center">
               <SectionHeader
                 title={item.title}
                 subtitle={item.subtitle}

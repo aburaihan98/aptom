@@ -107,7 +107,7 @@ export default function ServiceDetails() {
   return (
     <div className="bg-bg">
       <div className="Container grid grid-cols-12 gap-4 md:gap-6">
-        <div className="col-span-8">
+        <div className="col-span-12 lg:col-span-8 order-2 lg:order-1 ">
           <ServiceDetailsTopImage />
           <h2 className="Title2">Measure conversion metrics</h2>
           <p className="text-light mb-6 md:mb-8 lg:mb-10 2xl:mb-[50px]">
@@ -120,7 +120,7 @@ export default function ServiceDetails() {
           <h2 className="text-dark text-base md:text-lg lg:text-xl 2xl:text-[24px] mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-[30px]">
             Key Features
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {features.map((feature, index) => (
               <div key={index} className="bg-white rounded-[10px] p-6 ">
                 <div className="">
@@ -163,7 +163,7 @@ export default function ServiceDetails() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 md:py-8 lg:py-10 2xl:py-[50px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-6 md:py-8 lg:py-10 2xl:py-[50px]">
             {features2.map((feature, index) => (
               <div
                 key={feature.title}
@@ -209,7 +209,7 @@ export default function ServiceDetails() {
           </div>
           <OurServiceForm />
         </div>
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4 order-1 lg:order-2">
           <OurServiceSidebarMenu />
         </div>
       </div>

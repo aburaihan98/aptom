@@ -1,9 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/common/ScrollToTop";
 import NavBar from "./components/saas/NavBar";
+import { useState } from "react";
+import PreLoader from "./components/shared/PreLoader";
 
 function App() {
   const location = useLocation();
+  const [showPreLoader, setShowPreLoader] = useState(true);
 
   // Decide margin based on route
   let mainMargin = "";
@@ -17,16 +20,22 @@ function App() {
   // mt-[70px] md:mt-[90px] lg:mt-[100px]
 
   return (
-    <div className="relative overflow-hidden">
-      <ScrollToTop />
-      <div className="">
-        {/* {!hideNavbar && <NavBar />} */}
-        {/* <NavBar /> */}
-        <main className={mainMargin}>
-          <Outlet></Outlet>
-        </main>
+    <>
+      {/* PreLoader */}
+      {showPreLoader && (
+        <PreLoader onLoadComplete={() => setShowPreLoader(false)} />
+      )}
+      <div className="relative overflow-hidden">
+        <ScrollToTop />
+        <div className="">
+          {/* {!hideNavbar && <NavBar />} */}
+          {/* <NavBar /> */}
+          <main className={mainMargin}>
+            <Outlet></Outlet>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

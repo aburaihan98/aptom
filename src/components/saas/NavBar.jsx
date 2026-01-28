@@ -13,7 +13,7 @@ const navItem = [
   },
   {
     name: "Service",
-    path: "/service",
+    path: "/our-services",
   },
   { name: "About Us", path: "/about-us" },
   {
@@ -38,6 +38,7 @@ const navItem = [
     submenu: [
       { name: "Blog Standard ", path: "/blog" },
       { name: "Blog with sidebar", path: "/blog-with-sidebar" },
+      { name: "Blog Details", path: "/blog-details" },
     ],
   },
   { name: "Contact", path: "/contact" },
@@ -108,7 +109,9 @@ export default function NavBar() {
           </ul>
         </div>
         <div>
-          <Button title="Sign in" />
+          <Link to="/login">
+            <Button title="Sign in" />
+          </Link>
         </div>
       </div>
 

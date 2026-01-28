@@ -31,8 +31,8 @@ export default function LoginForm() {
   };
 
   return (
-    <div className=" bg-bg flex items-center justify-center py-6 md:py-8 lg:py-16 2xl:py-[100px]">
-      <div className="w-full max-w-md bg-white rounded-[10px] px-[30px] py-[50px]">
+    <div className=" bg-bg flex items-center justify-center py-6 md:py-8 lg:py-16 2xl:py-[100px] px-4 md:px-0">
+      <div className="w-full max-w-md bg-white rounded-[10px] px-4 md:px-[30px] py-[50px]">
         {/* Header */}
         <div className="text-center mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9">
           <h2 className="text-base md:text-lg lg:text-xl 2xl:text-[24px] font-bold text-dark mb-4 md:mb-5 lg:mb-6 2xl:mb-[24px]">

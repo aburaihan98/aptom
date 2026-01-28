@@ -1,6 +1,7 @@
 import PageBanner from "../../components/common/PageBanner";
 import ContactFeature from "../../components/contact/ContactFeature";
 import ContactForm from "../../components/contact/ContactForm";
+import ContactMap from "../../components/contact/ContactMap";
 import { Footer } from "../../components/shared/Footer";
 import NavBar from "../../components/shared/NavBar";
 
@@ -18,6 +19,7 @@ export default function Contact() {
       />
       <ContactFeature />
       <ContactForm />
+      <ContactMap />
       <Footer />
     </div>
   );

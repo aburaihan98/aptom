@@ -67,11 +67,14 @@ export default function FAQ() {
                 />
               </div>
               {openIndex === index && (
-                <div className="px-5 md:px-6 lg:px-[30px] pb-5 md:pb-6 lg:pb-[30px]">
-                  <p className="text-light text-sm md:text-base">
-                    {faq.answer}
-                  </p>
-                </div>
+                <>
+                  <div className="border-t border-gray-100 mx-5 md:mx-6 lg:mx-[30px]"></div>
+                  <div className="px-5 md:px-6 lg:px-[30px] py-5 md:py-6 lg:py-[30px]">
+                    <p className="text-light text-sm md:text-base">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </>
               )}
             </div>
           ))}

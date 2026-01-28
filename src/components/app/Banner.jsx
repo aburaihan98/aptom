@@ -1,8 +1,7 @@
 import AppBanner from "../../assets/app/banner/app-banner.webp";
 import PlayStor from "../../assets/app/icon/play-stor.webp";
 import AppStor from "../../assets/app/icon/app-stor.webp";
-import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const features = [
   "Best for money management",
@@ -47,7 +46,7 @@ export function Banner() {
   return (
     <div className="bg-bg mt-[22px]">
       <div className="pt-6 md:pt-8 lg:pt-16 2xl:pt-[100px] mx-4 sm:mx-6 md:mx-12 lg:mx-16 max-w-[1920px] 2xl:mx-auto">
-        <div className=" flex gap-8 lg:gap-12">
+        <div className=" flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Side - Purple gradient with phone mockup */}
           <div className=" relative flex-1 relative bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400 h-96 md:h-full md:min-h-96  rounded-r-[30px]">
             <div className="absolute top-[65px] right-[25px]  flex flex-col space-y-6">

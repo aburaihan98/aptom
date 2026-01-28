@@ -1,4 +1,4 @@
-import { Calendar, MessageCircle, Search, User } from "lucide-react";
+import { Search } from "lucide-react";
 import B1 from "../../assets/shared/latest-insights/blog1.jpg";
 import B3 from "../../assets/shared/latest-insights/blog3.jpg";
 import B4 from "../../assets/shared/latest-insights/blog4.jpg";
@@ -488,7 +488,7 @@ export default function BlogDetailsContent() {
             </div>
 
             {/* Comments Section */}
-            <div className="bg-white">
+            <div className="bg-bg">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">
                 Comment (2)
               </h2>

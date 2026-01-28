@@ -1,7 +1,7 @@
 import AboutUsImage from "../../assets/saas/about-us/about-us.webp";
 import AboutUsImage2 from "../../assets/saas/about-us/about-us-2.webp";
 import SectionHeader from "../common/SectionHeader";
-import CheckMark from "../../assets/common/check-mark.webp";
+import CheckMark from "../../assets/common/check-mark-about.png";
 import Button from "../common/Button";
 
 const features = [
@@ -14,10 +14,14 @@ const features = [
 export default function AboutUs() {
   return (
     <div className="bg-bg">
-      <div className="Container flex flex-col-reverse lg:flex-row gap-8 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-[107px] items-center justify-between">
-        <div className=" relative">
-          <div className=" relative w-full lg:w-[572px]">
-            <img src={AboutUsImage} alt="About Us Image" />
+      <div className="Container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-[107px] items-center justify-between">
+        <div className=" relative w-full">
+          <div className=" relative w-full aspect-[4/3]">
+            <img
+              src={AboutUsImage}
+              alt="About Us Image"
+              className="w-full h-auto rounded-[20px]"
+            />
           </div>
           <div className=" absolute bottom-0 md:bottom-8 lg:bottom-10 xl:bottom-12 2xl:bottom-[50px] right-14 md:-right-12 lg:-right-16 xl:-right-20 2xl:-right-[103px]">
             <img className="w-full" src={AboutUsImage2} alt="AboutUsImage2" />
@@ -36,11 +40,11 @@ export default function AboutUs() {
             decisions, automate repetitive tasks, and drive measurable growth.
           </p>
           {/* Features Grid */}
-          <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 xl:gap-[28px] 2xl:gap-[34px] mb-4 md:mb-6 lg:mb-8 2xl:mb-10">
+          <div className="grid grid-cols-[auto_auto] gap-x-8 md:gap-x-12 lg:gap-x-16 xl:gap-x-[28px] 2xl:gap-x-[34px] gap-y-4 md:gap-y-6 lg:gap-y-8 mb-4 md:mb-6 lg:mb-8 2xl:mb-10 w-fit">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3">
                 <img src={feature.icon} alt="feature icon" />
-                <span className="text-gray-700 font-medium">
+                <span className="text-gray-700 font-medium whitespace-nowrap">
                   {feature.text}
                 </span>
               </div>

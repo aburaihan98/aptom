@@ -1,8 +1,10 @@
 export default function FeaturesCard({ feature, index }) {
   return (
     <div>
-      {" "}
-      <div key={index} className="bg-white rounded-[5px] p-8 text-center">
+      <div
+        key={index}
+        className="bg-white rounded-[5px] p-8 text-center h-full"
+      >
         {/* Icon container */}
         <div className="flex justify-center mb-4">
           <div className="bg-[#E9E9E9] rounded-full p-5">
@@ -17,7 +19,7 @@ export default function FeaturesCard({ feature, index }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
+        <h3 className="text-lg font-semibold text-dark mb-3">
           {feature.title}
         </h3>
 

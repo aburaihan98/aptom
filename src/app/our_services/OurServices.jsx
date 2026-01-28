@@ -1,7 +1,7 @@
 import PageBanner from "../../components/common/PageBanner";
 import OurServicesPage from "../../components/our_services/OurServicesPage";
 import { Footer } from "../../components/shared/Footer";
-import LiveDemo from "../../components/shared/LiveDemo";
+import LiveDemoForPricingPlanOurServices from "../../components/shared/LiveDemoForPricingPlanOurServices";
 import NavBar from "../../components/shared/NavBar";
 import Testimonial from "../../components/shared/Testimonial";
 import TryAptomFreeForTanDays from "../../components/shared/TryAptomFreeForTanDays";
@@ -19,7 +19,7 @@ export default function OurServices() {
         ]}
       />
       <OurServicesPage />
-      <LiveDemo />
+      <LiveDemoForPricingPlanOurServices />
       <Testimonial />
       <TryAptomFreeForTanDays />
       <Footer />
