@@ -15,10 +15,6 @@ function App() {
     mainMargin = "mt-[90px] md:mt-[100px] lg:mt-[85px]";
   }
 
-  // mt-[90px] md:mt-[100px] lg:mt-[85px]
-
-  // mt-[70px] md:mt-[90px] lg:mt-[100px]
-
   return (
     <>
       {/* PreLoader */}
@@ -28,8 +24,6 @@ function App() {
       <div className="relative overflow-hidden">
         <ScrollToTop />
         <div className="">
-          {/* {!hideNavbar && <NavBar />} */}
-          {/* <NavBar /> */}
           <main className={mainMargin}>
             <Outlet></Outlet>
           </main>

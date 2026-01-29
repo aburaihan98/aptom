@@ -60,8 +60,8 @@ export default function CaseStudyDetailContent() {
   ];
 
   return (
-    <div className="-mt-10 md:-mt-48 flex items-center justify-center">
-      <div className="p-4 md:p-[50px] space-y-10">
+    <div className="max-w-5xl mx-auto -mt-0 md:-mt-44 lg:-mt-32 flex items-center justify-center">
+      <div className="lg:p-6 md:py-[50px] space-y-10">
         {/* Challenge Section */}
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">

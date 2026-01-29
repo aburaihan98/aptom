@@ -164,7 +164,7 @@ export default function ServiceDetails() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-6 md:py-8 lg:py-10 2xl:py-[50px]">
-            {features2.map((feature, index) => (
+            {features2.map((feature) => (
               <div
                 key={feature.title}
                 className="bg-white p-6 lg:p-[30px] rounded-[20px]"

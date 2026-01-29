@@ -53,8 +53,13 @@ export default function SimplePricingCard({
       </ul>
 
       {/* CTA Button */}
-      <div className="flex justify-center">
-        <Button title="purchase now" bg="#031E2D" text="white" />
+      <div className="flex justify-center w-full">
+        <Button
+          title="purchase now"
+          bg="#031E2D"
+          text="white"
+          fullWidth={true}
+        />
       </div>
     </div>
   );

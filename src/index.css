@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Space Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-primary: #864ffd;
   --color-secondary: #000000;
   --color-dark: #031e2d;
@@ -17,7 +19,7 @@
 
 @layer components {
   .Container {
-    @apply py-6 md:py-8 lg:py-16 2xl:py-[100px] mx-4 sm:mx-6 md:mx-12 lg:mx-16 max-w-[1920px];
+    @apply py-6 md:py-8 lg:py-16 2xl:py-[100px] mx-4 sm:mx-6 md:mx-12 lg:mx-16 2xl:mx-56 max-w-[1920px];
   }
   .Title2 {
     @apply text-dark font-bold text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9;

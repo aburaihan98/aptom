@@ -1,13 +1,13 @@
 import BlogDetailsContent from "../../components/blog/BlogDetailsContent";
 import PageBanner from "../../components/common/PageBanner";
-import NavBar from "../../components/saas/NavBar";
 import { Footer } from "../../components/shared/Footer";
+import NavBar from "../../components/shared/NavBar";
 import TryAptomFreeForTanDays from "../../components/shared/TryAptomFreeForTanDays";
 
 export default function BlogDetails() {
   return (
     <div>
-      <NavBar />
+      <NavBar/>
       <PageBanner
         title="Latest Insights"
         breadcrumbs={[

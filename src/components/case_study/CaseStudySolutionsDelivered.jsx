@@ -51,8 +51,8 @@ const lessons = [
 
 export default function CaseStudySolutionsDelivered() {
   return (
-    <div className=" max-w-4xl mx-auto flex items-center justify-center ">
-      <div className="py-[50px]">
+    <div className=" max-w-5xl lg:p-6 mx-auto flex items-center justify-center ">
+      <div className="space-y-10">
         {/* Solutions Delivered Section */}
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-6">

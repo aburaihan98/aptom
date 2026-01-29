@@ -65,7 +65,7 @@ export default function OurServiceSidebarMenu() {
           ))}
         </div>
       </div>
-      
+
       {/* Tags Section */}
       <div className="bg-white rounded-[10px] mt-4 lg:mt-5 p-6 2xl:p-9">
         <div className="mb-6">
@@ -92,8 +92,8 @@ export default function OurServiceSidebarMenu() {
         </h3>
         <div className="space-y-4">
           {contactInfo.map((info, index) => (
-            <div key={index} className="flex">
-              <p className="w-[80px] font-semibold text-dark">{info.label}:</p>
+            <div key={index} className="flex gap-4">
+              <p className="w-[67px] font-semibold text-dark">{info.label}:</p>
               <p className=" text-light leading-relaxed">{info.value}</p>
             </div>
           ))}

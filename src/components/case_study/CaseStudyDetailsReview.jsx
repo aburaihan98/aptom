@@ -3,7 +3,7 @@ import Quote from "../../assets/case-study/quote.png";
 
 export default function CaseStudyDetailsReviewCard() {
   return (
-    <div className="max-w-4xl mx-auto flex items-center justify-center ">
+    <div className="max-w-5xl mx-auto pt-6 md:pt-10 lg:pt-14 lg:p-6 flex items-center justify-center ">
       <div className="bg-white rounded-[20px] p-6 md:p-7 lg:p-8 2xl:p-9">
         {/* Testimonial Quote */}
         <p className="text-light text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px]    2xl:text-[20px] leading-relaxed mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9">

@@ -4,6 +4,7 @@ import User from "../../assets/register/user.png";
 import Mail from "../../assets/register/mail-for-register.png";
 import Lock from "../../assets/register/lock.png";
 import Eye from "../../assets/register/eye.png";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -40,9 +41,9 @@ export default function LoginForm() {
           </h2>
           <p className="text-sm text-light">
             Already have an account?
-            <a href="#" className="text-primary hover:underline">
+            <Link to="/register" className="text-primary hover:underline ml-1">
               Sign up here
-            </a>
+            </Link>
           </p>
         </div>
 

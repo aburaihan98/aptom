@@ -12,12 +12,14 @@ export default function OurServicesPageCard({ service }) {
           {service?.description}
         </p>
         <div className="mb-4 md:mb-5 lg:mb-6 2xl:mb-[24px]">
-          <div className=" block group-hover:hidden">
+          <div className=" opacity-100 group-hover:opacity-0 transition-opacity duration-300">
             <img src={UpRightArrow} alt="Up Right Arrow" />
           </div>
-          <div className="hidden group-hover:block">
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="flex items-center gap-3 md:gap-4">
-              <span className="group-hover:text-primary">Learn more</span>
+              <span className="group-hover:text-primary transition-colors duration-300">
+                Learn more
+              </span>
               <img src={RightArrow} alt="Up Right Arrow" />
             </div>
           </div>

@@ -86,18 +86,12 @@ export default function NavBar() {
 
                 {/* Dropdown menu */}
                 {item.submenu && (
-                  <div className="space-y-4 2xl:space-y-6  absolute -left-6 top-full hidden group-hover:block bg-white shadow-lg rounded-md p-6 2xl:p-8 z-50">
+                  <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 z-50">
                     {item.submenu.map((sub, subIndex) => (
                       <Link
                         key={subIndex}
                         to={sub.path}
-                        className={`block p-2 rounded-md whitespace-nowrap transition
-                            ${
-                              item.name === "Home"
-                                ? "bg-primary text-white"
-                                : "bg-transparent text-dark hover:bg-gray-100"
-                            }
-                          `}
+                        className="block px-4 py-2 text-dark hover:bg-gray-100 hover:text-primary transition"
                       >
                         {sub.name}
                       </Link>

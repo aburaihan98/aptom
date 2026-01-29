@@ -96,7 +96,7 @@ export default function BlogDetailsContent() {
   return (
     <div className="bg-bg">
       <div className="Container grid grid-cols-12 gap-4 md:gap-6">
-        <div className="col-span-4">
+        <div className=" col-span-12 lg:col-span-4">
           {/* Header */}
           <div className="relative">
             <input
@@ -141,9 +141,9 @@ export default function BlogDetailsContent() {
             <div className="space-y-6 lg:space-y-8 2xl:space-y-10">
               {blogPosts.map((post, index) => (
                 <div key={index} className=" cursor-pointer">
-                  <div className="grid grid-cols-1  lg:grid-cols-2 gap-4">
+                  <div className="flex gap-4 gap-4">
                     {/* Image */}
-                    <div className="relative h-32">
+                    <div className="relative w-40 h-24">
                       <img
                         src={post.image}
                         alt={post.title}
@@ -188,8 +188,8 @@ export default function BlogDetailsContent() {
             </div>
           </div>
         </div>
-        <div className="col-span-8">
-          <div className=" h-[460px]">
+        <div className="col-span-12 lg:col-span-8">
+          <div className="h-[300px] lg:h-[460px]">
             <img className="w-full h-full" src={BlogBanner} alt="Blog" />
           </div>
           <article className="pt-6 md:pt-8 2xl:pt-9">
@@ -215,12 +215,12 @@ export default function BlogDetailsContent() {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] font-bold text-dark mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-9 leading-tight mt-6">
               How SaaS Startups Can Scale Without Burning Out
             </h1>
 
             {/* Intro Paragraph */}
-            <p className="text-gray-600 text-lg leading-relaxed mb-10">
+            <p className="text-light leading-relaxed mb-6 md:mb-8 lg:mb-10 2xl:mb-[50px]">
               Scaling a SaaS startup is exhilarating—but it can also feel like
               sprinting a marathon. Founders and teams often push themselves to
               the brink, chasing growth at all costs. The good news? Sustainable
@@ -230,30 +230,34 @@ export default function BlogDetailsContent() {
 
             {/* Section 1 */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-6">
                 1. Prioritize Sustainable Growth Over Hypergrowth
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Avoid vanity metrics:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
+                      Avoid vanity metrics:
+                    </span>{" "}
                     Focus on customer retention, lifetime value, and product
                     adoption rather than just sign-ups.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Build for longevity:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
+                      Build for longevity:
+                    </span>{" "}
                     Growth that outpaces infrastructure or team capacity often
                     leads to burnout.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">
+                  <p className="text-light">
+                    <span className="font-semibold text-dark">
                       Adopt a "slow is smooth, smooth is fast" mindset:
                     </span>{" "}
                     Incremental improvements compound into exponential results.
@@ -264,29 +268,35 @@ export default function BlogDetailsContent() {
 
             {/* Section 2 */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-6">
                 2. Invest In People, Not Just Processes
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Hire thoughtfully:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
+                      Hire thoughtfully:
+                    </span>{" "}
                     Don't scale headcount faster than revenue.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Empower autonomy:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
+                      Empower autonomy:
+                    </span>{" "}
                     Teams thrive when they have ownership over their decisions.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Protect culture:</span> A
-                    healthy work environment reduces turnover and keeps morale
+                  <p className="text-light">
+                    <span className="font-semibold text-dark">
+                      Protect culture:
+                    </span>{" "}
+                    A healthy work environment reduces turnover and keeps morale
                     high.
                   </p>
                 </div>
@@ -312,14 +322,14 @@ export default function BlogDetailsContent() {
           <article className="py-8 md:py-12">
             {/* Section 3 */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-6">
                 3. Automate And Delegate Early
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
                       Leverage automation tools:
                     </span>{" "}
                     CRM, billing, onboarding, and analytics can be streamlined
@@ -328,8 +338,8 @@ export default function BlogDetailsContent() {
                 </div>
 
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
                       Delegate non-core tasks:
                     </span>{" "}
                     Outsource accounting, HR, or customer support when possible.
@@ -337,8 +347,8 @@ export default function BlogDetailsContent() {
                 </div>
 
                 <div>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">
+                  <p className="text-light">
+                    <span className="font-semibold text-dark">
                       Focus on product-market fit:
                     </span>{" "}
                     Free up founders to concentrate on innovation and customer
@@ -350,29 +360,29 @@ export default function BlogDetailsContent() {
 
             {/* Section 4 */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-6">
                 4. Balance Hustle With Rest
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Set boundaries:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">Set boundaries:</span>{" "}
                     Encourage reasonable working hours and discourage
                     "always-on" culture.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Normalize downtime:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">Normalize downtime:</span>{" "}
                     Rest fuels creativity and problem-solving.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Lead by example:</span>{" "}
+                  <p className="text-light">
+                    <span className="font-semibold text-dark">Lead by example:</span>{" "}
                     Founders who model balance inspire their teams to follow
                     suit.
                   </p>
@@ -382,14 +392,14 @@ export default function BlogDetailsContent() {
 
             {/* Section 5 */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-6">
                 5. Build Scalable Systems
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
                       Design modular architecture:
                     </span>{" "}
                     Ensure your product can handle growth without constant
@@ -398,16 +408,16 @@ export default function BlogDetailsContent() {
                 </div>
 
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Document processes:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">Document processes:</span>{" "}
                     Create clear playbooks for onboarding, customer success, and
                     product updates.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Measure what matters:</span>{" "}
+                  <p className="text-light">
+                    <span className="font-semibold text-dark">Measure what matters:</span>{" "}
                     Use KPIs that align with long-term vision, not short-term
                     hype.
                   </p>
@@ -417,22 +427,22 @@ export default function BlogDetailsContent() {
 
             {/* Section 6 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-6">
                 6. Stay Customer-Centric
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">Listen actively:</span>{" "}
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">Listen actively:</span>{" "}
                     Feedback loops prevent wasted effort on features nobody
                     wants.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-700 mb-2">
-                    <span className="font-semibold">
+                  <p className="text-light mb-2">
+                    <span className="font-semibold text-dark">
                       Deliver value consistently:
                     </span>{" "}
                     Happy customers become advocates, reducing marketing spend.
@@ -440,8 +450,8 @@ export default function BlogDetailsContent() {
                 </div>
 
                 <div>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Avoid feature bloat:</span>{" "}
+                  <p className="text-light">
+                    <span className="font-semibold text-dark">Avoid feature bloat:</span>{" "}
                     Simplicity scales better than complexity.
                   </p>
                 </div>
@@ -455,7 +465,7 @@ export default function BlogDetailsContent() {
               <div className="flex items-center justify-between flex-wrap gap-4">
                 {/* Tags */}
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-700 font-medium">Tags :</span>
+                  <span className="text-light font-medium">Tags :</span>
                   <button className="px-4 py-2 bg-white text-purple-600 rounded-full text-sm font-medium hover:bg-purple-50 transition">
                     #SaaSMarketing
                   </button>
@@ -466,9 +476,7 @@ export default function BlogDetailsContent() {
 
                 {/* Social Share */}
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-700 font-medium">
-                    Social Share :
-                  </span>
+                  <span className="text-light font-medium">Social Share :</span>
                   <div className="flex gap-2 bg-white rounded-full">
                     <button className="w-10 h-10 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition">
                       <img src={Facebook} alt="Facebook" />

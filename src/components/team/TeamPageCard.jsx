@@ -2,7 +2,7 @@ import UpRightArrowBlack from "../../assets/common/up-right-arrow-black.webp";
 
 export default function TeamPageCard({ team }) {
   return (
-    <div className=" relative bg-white px-5 md:px-7 lg:px-9 pt-5 md:pt-7 lg:pt-9 flex flex-col items-center justify-center w-full group">
+    <div className=" relative rounded-[10px] bg-white px-5 md:px-7 lg:px-9 pt-5 md:pt-7 lg:pt-9 flex flex-col items-center justify-center w-full group">
       {/* Content Section */}
       <div className="w-full text-left mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-[30px]">
         {/* Name */}

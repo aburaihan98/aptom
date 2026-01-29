@@ -43,7 +43,7 @@ export default function Feature() {
               <div
                 key={index}
                 onMouseEnter={() => setActiveIndex(index)}
-                className={`text-dark py-6 px-4 md:py-8 md:px-6 lg:py-10 lg:px-8 2xl:py-[60px] 2xl:px-[30px] transition-colors ${
+                className={`text-dark py-6 px-4 md:py-8 md:px-6 lg:py-10 lg:px-8 2xl:py-[60px] 2xl:px-[30px] transition-colors rounded-[20px] ${
                   isActive
                     ? "bg-[#E0C0FF]"
                     : "bg-transparent hover:bg-[#E0C0FF]"

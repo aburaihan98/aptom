@@ -136,12 +136,12 @@ export default function NavBar({ bgColor = "white" }) {
 
       {/* Full Screen Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[60] bg-black text-white lg:hidden">
+        <div className="fixed inset-0 z-[60] bg-black text-white lg:hidden overflow-y-auto ">
           {/* Navigation */}
-          <nav className="border-b border-gray-800">
+          <nav className="">
             <div className="max-w-7xl mx-auto px-6 py-8">
               {/* Header with close button */}
-              <div className="flex justify-end items-center">
+              <div className="flex justify-end items-center absolute top-3 right-3">
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="flex items-center justify-center p-2 border border-gray-700 hover:bg-gray-900 rounded-full transition-colors"
@@ -151,7 +151,7 @@ export default function NavBar({ bgColor = "white" }) {
               </div>
 
               {/* Menu Items */}
-              <div className="space-y-6 max-h-[50vh] overflow-y-auto">
+              <div className="space-y-4 max-h-[50vh] overflow-y-auto mt-8">
                 {navItem.map((item, index) => (
                   <div key={index}>
                     <div
@@ -207,21 +207,21 @@ export default function NavBar({ bgColor = "white" }) {
           </nav>
 
           {/* Hero Section */}
-          <section className="max-w-7xl mx-auto px-6 py-12 md:py-24 flex flex-col items-center justify-center text-center">
+          <section className="max-w-7xl mx-auto py-6 flex flex-col items-center justify-center text-center">
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-light mb-8 tracking-tight">
+            <h1 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px]   font-bold mb-8 tracking-tight">
               Aptom.
             </h1>
 
             {/* Description */}
-            <p className="max-w-2xl text-sm md:text-lg font-light text-gray-300 leading-relaxed mb-12 md:mb-16">
+            <p className="max-w-2xl text-sm md:text-lg font-light text-gray-300 leading-relaxed mb-6 px-4">
               We're more than just software providers, we're partners in
               progress. By combining digital expertise with local insight in a
               fast-changing digital world
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-6 md:gap-12 text-sm font-light tracking-wider flex-wrap justify-center">
+            <div className="border-b pb-6 mb-5 border-gray-800 flex justify-between gap-6 text-sm tracking-wider flex-wrap">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
