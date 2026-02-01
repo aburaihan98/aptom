@@ -36,26 +36,38 @@ const items = [
 export default function ManageAllOfYourStuff() {
   const containerRef = useRef(null);
   const [displayItems, setDisplayItems] = useState(items);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   const ITEM_HEIGHT = 89;
 
   useEffect(() => {
+    let delayedCallInstance = null;
+
     const carouselLoop = () => {
       if (containerRef.current) {
+        delayedCallInstance = gsap.delayedCall(0.6, () => {
+          setActiveIndex(2);
+        });
+
         gsap.to(containerRef.current, {
           y: -ITEM_HEIGHT,
-          duration: 0.8,
-          ease: "power2.inOut",
+          duration: 1.2,
+          ease: "power1.inOut",
           onComplete: () => {
             setDisplayItems((prev) => [...prev.slice(1), prev[0]]);
             gsap.set(containerRef.current, { y: 0 });
+            setActiveIndex(1);
           },
         });
       }
     };
 
-    const interval = setInterval(carouselLoop, 3000); // Rotate every 4 seconds
-    return () => clearInterval(interval);
+    const interval = setInterval(carouselLoop, 4500);
+
+    return () => {
+      clearInterval(interval);
+      if (delayedCallInstance) delayedCallInstance.kill();
+    };
   }, []);
 
   return (
@@ -100,27 +112,36 @@ export default function ManageAllOfYourStuff() {
               {/* Items */}
               <div ref={containerRef} className="flex flex-col gap-[9px]">
                 {displayItems.map((item, index) => {
-                  const isTop = index === 0; // 50% visible at top
-                  const isActive = index === 1; // Active/focused (100% with icon)
-                  const isMiddle = index === 2 || index === 3; // 100% visible, no icon
-                  const isBottom = index === 4; // 50% visible at bottom
+                  const isTop = index === 0;
+                  const isActive = index === activeIndex;
+                  const isMiddle = index === 2 || index === 3;
+                  const isBottom = index === 4;
 
                   return (
                     <div
-                      key={item.id}
+                      key={index}
                       className={`
-                        flex-shrink-0 px-10 py-5 rounded-[10px]
+                        flex-shrink-0 px-10 rounded-[10px]
                         flex items-center justify-center
-                        text-white transition-colors duration-500 ease-in-out
-                        ${isActive ? " bg-[#864FFD]" : " bg-[#031E2D]"}
+                        text-white transition-all duration-700 ease-in-out
+                        ${isActive ? "bg-[#864FFD] py-5" : "bg-[#031E2D] py-5"}
                         ${isTop ? "opacity-50 -mt-[40px]" : ""}
                         ${isBottom ? "opacity-50 -mb-[40px]" : ""}
                         ${isMiddle ? "opacity-100" : ""}
                       `}
                     >
                       <div className="flex flex-col items-center gap-3">
-                        {/* icon only for active item */}
-                        {isActive && item.icon}
+                        {/* Icon with smooth fade */}
+                        <div
+                          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                            isActive
+                              ? "max-h-[40px] opacity-100 mb-0"
+                              : "max-h-0 opacity-0 mb-0"
+                          }`}
+                        >
+                          {item.icon}
+                        </div>
+
                         <span className="text-lg font-semibold">
                           {item.title}
                         </span>

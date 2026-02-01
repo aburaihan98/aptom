@@ -35,15 +35,14 @@ export default function Feature() {
   return (
     <div>
       <div className="Container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 ">
           {features.map((feature, index) => {
             const isActive = index === activeIndex;
-
             return (
               <div
                 key={index}
                 onMouseEnter={() => setActiveIndex(index)}
-                className={`text-dark py-6 px-4 md:py-8 md:px-6 lg:py-10 lg:px-8 2xl:py-[60px] 2xl:px-[30px] transition-colors rounded-[20px] ${
+                className={`cursor-pointer text-dark py-6 px-4 md:py-8 md:px-6 lg:py-10 lg:px-8 2xl:py-[60px] 2xl:px-[30px] transition-colors rounded-[20px] ${
                   isActive
                     ? "bg-[#E0C0FF]"
                     : "bg-transparent hover:bg-[#E0C0FF]"
@@ -56,7 +55,9 @@ export default function Feature() {
                   {feature.description}
                 </p>
 
-                <ul className={`space-y-4 ${isActive ? "block" : "hidden"}`}>
+                <ul
+                  className={`space-y-4 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}
+                >
                   {feature.checks.map((check, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
                       <img src={CheckMark} alt="Check Mark" />

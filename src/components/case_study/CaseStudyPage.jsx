@@ -14,7 +14,7 @@ const caseStudyData = [
   {
     id: 1,
     category: "Business Strategy",
-    title: "5 Game-Changing SaaS Marketing Strategies for Small Startups",
+    title: "Business Consulting for team coxmo",
     description:
       "Discover proven marketing tactics that help small SaaS startups compete with industry giants and accelerate growth.",
     image: C1,
@@ -24,7 +24,7 @@ const caseStudyData = [
   {
     id: 2,
     category: "Product Development",
-    title: "Scaling SaaS Best Practices And Pitfalls To Avoid",
+    title: "Turning Data into Decisions with SaaS",
     description:
       "Learn essential strategies for scaling your SaaS business while avoiding common mistakes that slow growth.",
     image: C2,
@@ -34,8 +34,7 @@ const caseStudyData = [
   {
     id: 3,
     category: "Business Strategy",
-    title:
-      "Building Customer Loyalty: Proven Strategies for Long-Term SaaS Success",
+    title: "Scaling Efficiency Time by 40%",
     description:
       "Explore effective methods to retain customers and build lasting relationships that drive sustainable revenue.",
     image: C3,
@@ -45,8 +44,7 @@ const caseStudyData = [
   {
     id: 4,
     category: "Product Development",
-    title:
-      "Automating Workflows: How AI SaaS Can Save Time And Boost Productivity",
+    title: "Automating Workflows for a 500+ ",
     description:
       "Understand how AI-powered automation transforms business operations and maximizes team efficiency.",
     image: C4,
@@ -171,7 +169,7 @@ export default function CaseStudyPage() {
                 onChange={(e) => handleSortChange(e.target.value)}
                 className="appearance-none  border border-[#E9E9E9] rounded-[30px] px-5 py-4  text-sm cursor-pointer hover:border-gray-400"
               >
-               <option value="recent">Latest</option>
+                <option value="recent">Latest</option>
                 <option value="popular">Most Popular</option>
               </select>
               <ChevronDown className="absolute right-2 top-1/2 ml-4 transform -translate-y-1/2 w-4 h-4 text-gray-600 pointer-events-none" />

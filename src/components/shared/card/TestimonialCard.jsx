@@ -2,7 +2,7 @@ import Quote from "../../../assets/shared/icon/quote.webp";
 
 export default function TestimonialCard({ index, avatar, quote, name, role }) {
   return (
-    <div key={index} className="bg-gray-50 rounded-lg p-8 max-w-md">
+    <div key={index} className="bg-gray-50 rounded-lg p-8 max-w-[300px]">
       {/* Header with avatar and icon */}
       <div className="flex items-start justify-between mb-6">
         <div>

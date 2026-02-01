@@ -1,9 +1,9 @@
 import AppBanner from "../../assets/app/banner/app-banner.webp";
 import PlayStor from "../../assets/app/icon/play-stor.webp";
 import AppStor from "../../assets/app/icon/app-stor.webp";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const features = [
+const initialFeatures = [
   "Best for money management",
   "top features integrated",
   "Real‑Time Activity Tracking",
@@ -11,36 +11,38 @@ const features = [
 ];
 
 export function Banner() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [items, setItems] = useState(initialFeatures);
+  const listRef = useRef(null);
+
+  const ITEM_HEIGHT = 80;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % features.length);
+      // animate up
+      listRef.current.style.transition = "transform 0.6s ease-in-out";
+      listRef.current.style.transform = `translateY(-${ITEM_HEIGHT}px)`;
+
+      setTimeout(() => {
+        // rotate array
+        setItems((prev) => [...prev.slice(1), prev[0]]);
+
+        // reset position
+        listRef.current.style.transition = "none";
+        listRef.current.style.transform = "translateY(0)";
+      }, 600);
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const getVisibleItems = () => {
-    const items = [];
-    for (let i = 0; i < 4; i++) {
-      const index = (activeIndex + i) % features.length;
-      items.push({
-        text: features[index],
-        position: i,
-      });
-    }
-    return items;
-  };
-
-  const getItemStyle = (position) => {
+  const getItemStyle = (index) => {
     const styles = [
       { opacity: 1, blur: 0, scale: 1 },
       { opacity: 0.7, blur: 1, scale: 0.95 },
       { opacity: 0.5, blur: 2, scale: 0.9 },
       { opacity: 0.3, blur: 3, scale: 0.85 },
     ];
-    return styles[position];
+    return styles[index] || styles[3];
   };
 
   return (
@@ -49,25 +51,27 @@ export function Banner() {
         <div className=" flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Side - Purple gradient with phone mockup */}
           <div className=" relative flex-1 relative bg-gradient-to-br from-purple-600 via-purple-500 to-purple-400 h-96 md:h-full md:min-h-96  rounded-r-[30px]">
-            <div className="absolute top-[65px] right-[25px]  flex flex-col space-y-6">
-              {getVisibleItems().map((item, i) => {
-                const style = getItemStyle(item.position);
+            <div className="absolute top-[65px] right-[25px] h-[320px] overflow-hidden">
+              <div ref={listRef} className="flex flex-col gap-6">
+                {items.map((item, index) => {
+                  const style = getItemStyle(index);
 
-                return (
-                  <button
-                    key={i}
-                    className="py-4 px-6 bg-[#FFFFFF26] rounded-[5px] text-white"
-                    style={{
-                      top: `${item.position * 80}px`,
-                      opacity: style.opacity,
-                      filter: `blur(${style.blur}px)`,
-                      transform: `scale(${style.scale})`,
-                    }}
-                  >
-                    • {item.text}
-                  </button>
-                );
-              })}
+                  return (
+                    <button
+                      key={index}
+                      className="py-4 px-6 bg-[#FFFFFF26] rounded-[5px] text-white"
+                      style={{
+                        top: `${item.position * 80}px`,
+                        opacity: style.opacity,
+                        filter: `blur(${style.blur}px)`,
+                        transform: `scale(${style.scale})`,
+                      }}
+                    >
+                      • {item}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
             <div className="mt-[170px] mx-4 sm:mx-6 md:mx-12 lg:mx-16 max-w-[1920px] 2xl:mx-auto">
               <img src={AppBanner} alt="App Banner" />

@@ -22,8 +22,24 @@ export default function TeamPageCard({ team }) {
           priority
         />
       </div>
-      <div className=" absolute bottom-5 py-5 px-6 bg-primary text-white rounded-[10px] hidden group-hover:block transition-all duration-300">
-        fb. / tw. / in. / be.
+      <div className="absolute bottom-5 py-5 px-6 bg-primary text-white rounded-[10px] hidden group-hover:block transition-all duration-300">
+        <div className="flex items-center gap-3 text-sm font-medium">
+          <span className="cursor-pointer hover:opacity-80 transition">
+            fb.
+          </span>
+          <span>/</span>
+          <span className="cursor-pointer hover:opacity-80 transition">
+            tw.
+          </span>
+          <span>/</span>
+          <span className="cursor-pointer hover:opacity-80 transition">
+            in.
+          </span>
+          <span>/</span>
+          <span className="cursor-pointer hover:opacity-80 transition">
+            be.
+          </span>
+        </div>
       </div>
     </div>
   );

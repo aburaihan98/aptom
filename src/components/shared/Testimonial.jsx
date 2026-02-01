@@ -7,6 +7,7 @@ import A6 from "../../assets/shared/testimonial/a6.png";
 import A7 from "../../assets/shared/testimonial/a7.png";
 import A8 from "../../assets/shared/testimonial/a8.png";
 import TestimonialCard from "./card/TestimonialCard";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -66,20 +67,77 @@ const testimonials = [
   },
 ];
 
+const marqueeLeft = {
+  animate: {
+    x: ["0%", "-50%"],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 30,
+        ease: "linear",
+      },
+    },
+  },
+};
+
+const marqueeRight = {
+  animate: {
+    x: ["-50%", "0%"],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 30,
+        ease: "linear",
+      },
+    },
+  },
+};
+
 export default function Testimonial() {
+  const firstRow = testimonials.slice(0, 4);
+  const secondRow = testimonials.slice(4);
+
   return (
     <div className="bg-bg">
       <div className="Container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              index={index}
-              avatar={testimonial.avatar}
-              quote={testimonial.quote}
-              name={testimonial.name}
-              role={testimonial.role}
-            />
-          ))}
+        {/* Row 1 → Right to Left */}
+        <div className="overflow-hidden space-y-10">
+          <motion.div
+            className="flex gap-6 w-max"
+            variants={marqueeLeft}
+            animate="animate"
+          >
+            {[...firstRow, ...firstRow].map((t, index) => (
+              <TestimonialCard
+                key={`row1-${index}`}
+                avatar={t.avatar}
+                quote={t.quote}
+                name={t.name}
+                role={t.role}
+              />
+            ))}
+          </motion.div>
+
+          {/* Row 2 → Left to Right */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-6 w-max"
+              variants={marqueeRight}
+              animate="animate"
+            >
+              {[...secondRow, ...secondRow].map((t, index) => (
+                <TestimonialCard
+                  key={`row2-${index}`}
+                  avatar={t.avatar}
+                  quote={t.quote}
+                  name={t.name}
+                  role={t.role}
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

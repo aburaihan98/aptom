@@ -40,7 +40,7 @@ export default function Featured() {
         {featuredItems.map((item, index) => (
           <div
             key={index}
-            className="sticky  bg-white rounded-[20px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-5"
+            className="sticky  bg-bg rounded-[20px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-5"
             style={{ top: `${getStickyTop(index)}px` }}
           >
             <div className="flex-1 bg-gradient-to-b from-[#864FFD] to-[#E7DBFF] rounded-xl p-6 flex justify-center">

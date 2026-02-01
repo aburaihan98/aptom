@@ -10,7 +10,7 @@ export default function PageBanner({ title, breadcrumbs = [] }) {
           clipPath: "polygon(0 0, 100% 0%, 100% 88%, 12% 100%, 0 88%)",
         }}
       >
-        <div className="Container flex flex-col md:flex-row md:items-end justify-between">
+        <div className="Container px-6 md:px-10 lg:px-24 flex flex-col md:flex-row md:items-center justify-between">
           <div className="flex items-end gap-4  mb-4 ">
             <h2 className=" text-[24px] sm:text-[28px] md:text-[36px] lg:text-[48px] xl:text-[60px] 2xl:text-[70px] leading-[1]">
               {title}

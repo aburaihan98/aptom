@@ -3,7 +3,7 @@ import Calendar from "../../assets/saas/icon/calendar.webp";
 export default function LatestInsightsCard({ insight }) {
   return (
     <div>
-      <div className="w-full">
+      <div className="w-full cursor-pointer ">
         {/* Hero Image Section */}
         <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden rounded-[20px]">
           <img

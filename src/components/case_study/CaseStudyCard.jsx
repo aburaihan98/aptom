@@ -2,7 +2,7 @@ import UpRightArrowBlack from "../../assets/common/up-right-arrow-black.webp";
 
 export default function CaseStudyCard({ study }) {
   return (
-    <div className=" relative mb-[120px]">
+    <div className=" relative mb-[120px] group cursor-pointer ">
       <div className="h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[550px] 2xl:h-[591px]">
         <img
           src={study.image}
@@ -25,8 +25,13 @@ export default function CaseStudyCard({ study }) {
         <p className="text-light mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-[70px]">
           {study?.description}
         </p>
-        <div className="inline-flex items-center justify-center w-10 h-10">
-          <img src={UpRightArrowBlack} alt="Up Right Arrow" />
+        <div className="flex items-center justify-start gap-4">
+          view case study{" "}
+          <img
+            src={UpRightArrowBlack}
+            alt="Up Right Arrow"
+            className=" group-hover:rotate-45"
+          />
         </div>
       </div>
     </div>

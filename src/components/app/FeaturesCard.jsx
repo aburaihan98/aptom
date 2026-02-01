@@ -1,9 +1,9 @@
 export default function FeaturesCard({ feature, index }) {
   return (
-    <div>
+    <div className="group">
       <div
         key={index}
-        className="bg-white rounded-[5px] p-8 text-center h-full"
+        className="bg-gradient-to-b from-[#FFFFFF] to-[#F6F6F6] rounded-[5px] p-8 text-center h-full cursor-pointer transition-all duration-300 ease-out group-hover:bg-white group-hover:[background-image:none] group-hover:-translate-y-2 group-hover:shadow-lg"
       >
         {/* Icon container */}
         <div className="flex justify-center mb-4">
